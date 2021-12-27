@@ -3,6 +3,10 @@ import Layout from '@/layout'
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/',
+    redirect: '/home'
+  },
+  {
     path: '/home',
     name: 'Home',
     meta: {

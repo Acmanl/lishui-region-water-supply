@@ -1,15 +1,18 @@
 import { defineComponent } from 'vue'
+import { SideBar, AppMain, TopBar } from './components'
 
 export default defineComponent({
   setup() {
     return () => (
-      <a-layout>
-        <a-layout-header>Header</a-layout-header>
-        <a-layout>
-          <a-layout-sider>Sider</a-layout-sider>
-          <a-layout-content>Content</a-layout-content>
-        </a-layout>
-      </a-layout>
+      <div class='app-wrapper'>
+        <TopBar></TopBar>
+        <transition name='fade-transform' mode='out-in'>
+          <SideBar class='sidebar-container' />
+        </transition>
+        <div class='main-container'>
+          <AppMain />
+        </div>
+      </div>
     )
   }
 })
